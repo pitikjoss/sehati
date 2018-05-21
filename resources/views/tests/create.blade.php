@@ -50,7 +50,7 @@
     @endif
     </div>
 
-    {!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger', 'id'=>'submit']) !!}
+    {!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger', 'id'=>'clickButton']) !!}
     {!! Form::close() !!}
 {{--    @else
 <h1>Waktu Mulai Test</h1>
@@ -121,7 +121,7 @@ var y = setInterval(function() {
 //     // If the count down is over, write some text 
     if (dista < 0) {
         clearInterval(y);
-//         // window.location.reload(true);
+        document.getElementById("clickButton").click();
     }
 }, 1000);
         $('.datetime').datetimepicker({

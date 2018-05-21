@@ -52,6 +52,10 @@ class HomeController extends Controller
         $users = User::whereNull('role_id')->count();
         $quizzes = Test::count();
         $average = Test::avg('result');
-        return view('home', compact('questions', 'users', 'quizzes', 'average','mulai','selesai','date','carbon','jos','jo','sekarang','dat','good'));
+
+        $user = Auth::user()->id;
+        $tes = Test::where('user_id',$user)->first();
+
+        return view('home', compact('questions', 'users', 'quizzes', 'average','mulai','selesai','date','carbon','jos','jo','sekarang','dat','good','tes'));
     }
 }

@@ -27,10 +27,14 @@
                     </div>
                 </div>
             </div>
+            @if(isset($tes))
+            <h1>Terimakasih</h1>
+            @else
             @if($date<=$sekarang)
             <a href="{{ route('tests.index') }}" class="btn btn-success">Take a new quiz!</a>
             @else
             <h1 id="demo"></h1>
+            @endif
             @endif
         </div>
     </div>
