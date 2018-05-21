@@ -43,7 +43,7 @@ class TestsController extends Controller
         $jo = $jo*1000;
 
 
-        $questions = Question::inRandomOrder()->limit(6)->get();
+        $questions = Question::inRandomOrder()->limit(100)->get();
         foreach ($questions as &$question) {
             $question->options = QuestionsOption::where('question_id', $question->id)->inRandomOrder()->get();
         }
